@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import amaLogo from "../assets/ama-logo.svg";
-import { ArrowRight, ArrowUp, Share2 } from "lucide-react";
+import { ArrowRight, Share2 } from "lucide-react";
 import { toast } from "sonner";
+import { Message } from "../components/message";
 
 export function Room() {
   const { roomId } = useParams();
@@ -57,28 +58,19 @@ export function Room() {
         </form>
 
         <ol className="list-decimal list-outside px-3 space-y-8">
-          <li className="ml-4 leading-relaxed text-zinc-100">
-            Quais as principais diferenças entre as diversas linguagens de
-            programação?
-            <button
-              type="button"
-              className="mt-3 flex items-center gap-2 text-orange-400 text-sm font-medium hover:text-orange-500"
-            >
-              <ArrowUp className="size-4" />
-              Curtir pergunta (123)
-            </button>
-          </li>
-          <li className="ml-4 leading-relaxed text-zinc-100">
-            Quais as principais diferenças entre as diversas linguagens de
-            programação?
-            <button
-              type="button"
-              className="mt-3 flex items-center gap-2 text-zinc-400 text-sm font-medium hover:text-zinc-300"
-            >
-              <ArrowUp className="size-4" />
-              Curtir pergunta (123)
-            </button>
-          </li>
+          <Message
+            text="Como funcionam as linguagens de programação?"
+            amountOfReactions={1000}
+            answered
+          />
+          <Message
+            text="Como funcionam as teorias de programação?"
+            amountOfReactions={245}
+          />
+          <Message
+            text="Como funcionam as funções de programação?"
+            amountOfReactions={87}
+          />
         </ol>
       </div>
     </div>
